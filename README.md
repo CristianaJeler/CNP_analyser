@@ -36,20 +36,24 @@ _How is it used?_ Each of the first twelve digits in the CNP is multiplied
 by its corespondent in the special constant. Next, the sum of these products 
 is computed, and then the total is divided by 11. If the remainder of this 
 division is 10, the control digit C would be 1. Otherwise, the control 
-digit would be the remainder itself.
+digit would be the remainder itself. So, the computed control digit, has to be equal 
+to the last digit of the CNP in order for it to be validated.
 
 The validation function that I have used for the control digit check is 
 the following:
 ```java
     private Boolean controlDigitValidation(String cnp) {
-        //control digit
-        final int C = cnp.charAt(cnp.length() - 1) - '0'; 
-        var sum = 0;
         String CONTROL_CONSTANT = "279146358279";
+        
+        //the last digit in the CNP
+        final int C = cnp.charAt(cnp.length() - 1) - '0'; 
+        
+        var sum = 0;
         for (var i = 0; i < CONTROL_CONSTANT.length(); i++) {
             sum += (cnp.charAt(i) - '0') * (CONTROL_CONSTANT.charAt(i) - '0');
         }
         
+        //the remainder of the division by 11
         int res = sum % 11;
         if (res == 10) res = 1;
         
@@ -57,7 +61,7 @@ the following:
     }
 ```
 
-The application was implemented in Java. It also has a plain user interface, 
+The application was implemented in Java. It has a plain user interface, 
 for which I have used JavaFX.
 
 The user clicks on the _**Choose a file...**_ button and 
