@@ -1,18 +1,0 @@
-
-G
-java:S54113"*Use the primitive boolean expression here.(©ª­8öŠ/
-J
-java:S1128	"4Remove this unused import 'java.util.regex.Matcher'.(ëÅ›ã
-S
-java:S1128"8Remove this unused import 'java.util.regex.MatchResult'.(È…û»ıÿÿÿÿ
-S
-java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ
-h	java:S116"TRename this field "CNP_REGEX" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î÷è_
-p	java:S116"[Rename this field "CONTROL_CONSTANT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë»æ¢
-6
-java:S1170"!Make this final field static too.(Î÷è_
-7
-java:S1170"!Make this final field static too.(Ë»æ¢
-N	java:S1068"9Replace this use of System.out or System.err by a logger.(Àûå 
-A
-java:S1168<"+Return an empty collection instead of null.(ãÕ ÿ

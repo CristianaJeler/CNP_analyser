@@ -40,7 +40,7 @@
             <Font size="14.0" />
          </font>
       </TextArea>
-      <Text fx:id="okText" fill="#2cac59" layoutX="322.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ALL GOOD! No CNP found!">
+      <Text fx:id="okText" fill="#2cac59" layoutX="374.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No CNP found!" textAlignment="CENTER">
          <font>
             <Font size="20.0" />
          </font>

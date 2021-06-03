@@ -12,20 +12,20 @@ import java.util.stream.Collectors;
 
 public class Finder {
     private final String CNP_REGEX =
-            "\\b[1-8]" + //gender
+                    "[1-8]" + //gender
                     "\\d{2}" + // year
-                    "(02(0[1-9]|[12]\\d)" + // february
+                    "(02(0[1-9]|[12]\\d)" + // february (only 28/29 days)
                     "|(0[13578]|1[02])(0[1-9]|[12]\\d|3[01])" + //months having 31 days
                     "|(0[469]|11(0[1-9]|[12]\\d|30)))" + //months having 30 days
-                    "(0\\d|[1-3]\\d|4[0-6]|5[12])" + //county
+                    "(0\\d|[1-3]\\d|4[0-6]|5[12])" + //county code
                     "\\d{2}[1-9]" + //secvential number
-                    "\\d\\b"; //control digit
-    private final String CONTROL_CONSTANT = "279146358279";
+                    "\\d"; //control digit
 
 
     private Boolean controlDigitValidation(String cnp) {
         final int C = cnp.charAt(cnp.length() - 1) - '0'; //control digit
         var sum = 0;
+        String CONTROL_CONSTANT = "279146358279";
         for (var i = 0; i < CONTROL_CONSTANT.length(); i++) {
             sum += (cnp.charAt(i) - '0') * (CONTROL_CONSTANT.charAt(i) - '0');
         }

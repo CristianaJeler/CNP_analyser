@@ -7,45 +7,33 @@ import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-
-import java.awt.*;
 import java.io.File;
 
 public class Controller {
-    Finder finder;
+    private Finder finder;
+    private Stage stage;
+    private FileChooser fileChooser;
+    private File file;
+
+    @FXML private Text fileToBeAnalysed;
+    @FXML private Text attentionText;
+    @FXML private TextArea foundCNPText;
+    @FXML private Text okText;
+    @FXML private Button chooseAFileButton;
+    @FXML private Button analyseButton;
 
     public void setStage(Stage stage) {
         this.stage = stage;
     }
 
-    Stage stage;
-
     public void setFinder(Finder finder) {
         this.finder = finder;
     }
 
-    FileChooser fileChooser = new FileChooser();
-    @FXML
-    Text fileToBeAnalysed;
-
-    @FXML
-    Text attentionText;
-
-    @FXML
-    TextArea foundCNPText;
-
-    @FXML
-    Text okText;
-
-    @FXML
-    Button chooseAFileButton;
-    @FXML
-    Button analyseButton;
-
-    File file;
-
     @FXML
     public void initialize() {
+        fileChooser=new FileChooser();
+
         fileChooser.getExtensionFilters()
                 .add(new FileChooser.ExtensionFilter("Text doc(*.txt)", "*.txt"));
         chooseAFileButton.setText("Choose a file...");
@@ -63,10 +51,9 @@ public class Controller {
 
 
     private void chooseFile() {
-        var file = fileChooser.showOpenDialog(stage);
+        file = fileChooser.showOpenDialog(stage);
         if (file != null) {
             fileToBeAnalysed.setText("Analysed file:\n" + file.getName());
-            this.file = file;
         }
     }
 
