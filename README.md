@@ -62,7 +62,7 @@ for which I have used JavaFX.
 
 The user clicks on the _**Choose a file...**_ button and 
 selects a text file to be analysed. After choosing the file, 
-one clicks on the _**Analyse**_ button, and the file is analysed.
+he clicks on the _**Analyse**_ button, and the file is analysed.
 
 If the file **contains any valid Romanian CNP**, a proper message is 
 shown together with the identified CNPs:
