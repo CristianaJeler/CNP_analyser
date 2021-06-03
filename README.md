@@ -3,10 +3,18 @@
 Before writing the code for this application, I have searched on the
 Internet to find more about the way the Romanian CNPs are created.
 This is how I found that every digit, or group of digits in it has a 
-certain significance. With that in mind, I first wrote a regular 
-expression to consider all the rules imposed by each group of digits 
-(_e.g._ the group AA (the second, and the third digit) stand for the last 
-two digits of the birth year). The regular expression that I have used
+certain significance:
+- **S**: the sex of the person
+- **AA**: last two digits of the birth year
+- **LL**: the birth month
+- **ZZ**: the day of birth
+- **JJ**: the code of the county where the person was born
+- **NNN**: a number differentiating the persons born in the same day, in the same place and having the same gender
+- **C**: the control digit
+
+With that in mind, I first wrote a regular 
+expression to consider all the rules imposed by each group of digits. 
+The regular expression that I have used
 is the following:
 
 ```java     
